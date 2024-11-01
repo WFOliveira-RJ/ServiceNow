@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2024-11-01 00:00:00">
+  <sys_remote_update_set>
+    <sys_remote_update_set action="INSERT_OR_UPDATE">
+      <application display_value="Event Registration">event_registration</application>
+      <application_name>Event Registration</application_name>
+      <application_scope>x_eventreg</application_scope>
+      <application_version>1.0.0</application_version>
+      <collisions/>
+      <created_by>admin</created_by>
+      <description>Initial configuration for Event Registration application</description>
+      <name>Event Registration - Initial Setup</name>
+      <remote_sys_id/>
+      <state>loaded</state>
+      <update_set display_value=""/>
+      <update_source display_value=""/>
+      <updated/>
+    </sys_remote_update_set>
+    
+    <!-- Application -->
+    <sys_app action="INSERT_OR_UPDATE">
+      <name>Event Registration</name>
+      <scope>x_eventreg</scope>
+      <version>1.0.0</version>
+      <sys_class_name>sys_app</sys_class_name>
+      <sys_created_by>admin</sys_created_by>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_app>
+
+    <!-- Event Table -->
+    <sys_db_object action="INSERT_OR_UPDATE">
+      <access>public</access>
+      <actions_access>true</actions_access>
+      <caller_access/>
+      <name>x_eventreg_event</name>
+      <sys_class_name>sys_db_object</sys_class_name>
+      <sys_name>Event</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_db_object>
+
+    <!-- Event Table Fields -->
+    <sys_dictionary action="INSERT_OR_UPDATE">
+      <element>name</element>
+      <max_length>100</max_length>
+      <min_length>0</min_length>
+      <position>1</position>
+      <sys_class_name>sys_dictionary</sys_class_name>
+      <sys_created_by>admin</sys_created_by>
+      <sys_name>Name</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+      <table>x_eventreg_event</table>
+      <type>string</type>
+    </sys_dictionary>
+
+    <sys_dictionary action="INSERT_OR_UPDATE">
+      <element>description</element>
+      <max_length>500</max_length>
+      <min_length>0</min_length>
+      <position>2</position>
+      <sys_class_name>sys_dictionary</sys_class_name>
+      <sys_name>Description</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+      <table>x_eventreg_event</table>
+      <type>string</type>
+    </sys_dictionary>
+
+    <sys_dictionary action="INSERT_OR_UPDATE">
+      <element>seats</element>
+      <max_length>0</max_length>
+      <min_length>0</min_length>
+      <position>3</position>
+      <sys_class_name>sys_dictionary</sys_class_name>
+      <sys_name>Seats</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+      <table>x_eventreg_event</table>
+      <type>integer</type>
+    </sys_dictionary>
+
+    <!-- Registration Table -->
+    <sys_db_object action="INSERT_OR_UPDATE">
+      <access>public</access>
+      <actions_access>true</actions_access>
+      <caller_access/>
+      <extend_table>task</extend_table>
+      <name>x_eventreg_registration</name>
+      <sys_class_name>sys_db_object</sys_class_name>
+      <sys_name>Registration</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_db_object>
+
+    <!-- Registration Table Fields -->
+    <sys_dictionary action="INSERT_OR_UPDATE">
+      <element>event</element>
+      <reference>x_eventreg_event</reference>
+      <reference_qual/>
+      <reference_qual_condition/>
+      <sys_class_name>sys_dictionary</sys_class_name>
+      <sys_name>Event</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+      <table>x_eventreg_registration</table>
+      <type>reference</type>
+    </sys_dictionary>
+
+    <!-- State Choice List -->
+    <sys_choice action="INSERT_OR_UPDATE">
+      <name>x_eventreg_registration.state</name>
+      <label>In analyse</label>
+      <value>in_analyse</value>
+      <dependent_value/>
+      <sys_created_by>admin</sys_created_by>
+      <sys_name>State</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_choice>
+
+    <sys_choice action="INSERT_OR_UPDATE">
+      <name>x_eventreg_registration.state</name>
+      <label>Approved</label>
+      <value>approved</value>
+      <dependent_value/>
+      <sys_created_by>admin</sys_created_by>
+      <sys_name>State</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_choice>
+
+    <sys_choice action="INSERT_OR_UPDATE">
+      <name>x_eventreg_registration.state</name>
+      <label>Reproved</label>
+      <value>reproved</value>
+      <dependent_value/>
+      <sys_created_by>admin</sys_created_by>
+      <sys_name>State</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_choice>
+
+    <!-- Module Configuration -->
+    <sys_app_module action="INSERT_OR_UPDATE">
+      <active>true</active>
+      <application display_value="Event Registration">event_registration</application>
+      <assessment/>
+      <device_type/>
+      <filter/>
+      <hint/>
+      <homepage/>
+      <image/>
+      <link_type>LIST</link_type>
+      <map_page/>
+      <mobile_title>Events</mobile_title>
+      <mobile_view_name>Mobile</mobile_view_name>
+      <name>x_eventreg_event</name>
+      <order>100</order>
+      <override_menu_roles>false</override_menu_roles>
+      <query/>
+      <report/>
+      <roles/>
+      <sys_class_name>sys_app_module</sys_class_name>
+      <sys_name>Events</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+      <sys_policy/>
+      <sys_scope display_value="Event Registration">event_registration</sys_scope>
+      <sys_update_name>sys_app_module_events</sys_update_name>
+      <timeline_page/>
+      <title>Events</title>
+      <uncancelable>false</uncancelable>
+      <view_name/>
+      <window_name/>
+    </sys_app_module>
+
+    <!-- Auto-numbering Configuration -->
+    <sys_number action="INSERT_OR_UPDATE">
+      <category display_value="Event">x_eventreg_event</category>
+      <maximum_digits>7</maximum_digits>
+      <number>1000</number>
+      <prefix>EVT-</prefix>
+      <sys_class_name>sys_number</sys_class_name>
+      <sys_name>Event</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_number>
+
+    <sys_number action="INSERT_OR_UPDATE">
+      <category display_value="Registration">x_eventreg_registration</category>
+      <maximum_digits>7</maximum_digits>
+      <number>1000</number>
+      <prefix>REG-</prefix>
+      <sys_class_name>sys_number</sys_class_name>
+      <sys_name>Registration</sys_name>
+      <sys_package display_value="Event Registration">event_registration</sys_package>
+    </sys_number>
+  </sys_remote_update_set>
+</unload>
