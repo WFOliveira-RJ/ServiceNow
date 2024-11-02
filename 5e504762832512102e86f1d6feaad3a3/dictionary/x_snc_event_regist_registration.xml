@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6e530f66832512102e86f1d6feaad328" extends="task" label="Registration" max_length="40" name="x_snc_event_regist_registration" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Full Name" max_length="100" name="full_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Event" max_length="32" name="event" reference="x_snc_event_regist_event" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Email" max_length="100" name="email" type="string"/>
+    </element>
+</database>
